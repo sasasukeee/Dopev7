@@ -61017,7 +61017,6 @@ function LouxInterval() {
 					for (let ang = 1; ang < 31; ang++) {
 						vw.oOW.send(JSON.stringify([10, 107, (ang + MYPLAYERANGLE) % 255, 0]));
 						vw.oOW.send(JSON.stringify([10, 107, (MYPLAYERANGLE - ang + 255) % 255, 0]))
-						[10, 107, 183, 0]
 					}
 				}
 				vw.oOW.send(JSON.stringify([10, spikeid, MYPLAYERANGLE, 0]))
