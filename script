@@ -61019,7 +61019,7 @@ function LouxInterval() {
 						vw.oOW.send(JSON.stringify([10, 107, (MYPLAYERANGLE - ang + 255) % 255, 0]))
 					}
 				}
-				vw.oOW.send(JSON.stringify([10, spikeid, MYPLAYERANGLE, 0]))
+				vw.oOW.send(JSON.stringify([10, 107, MYPLAYERANGLE, 0]))
 			}
 			if (Settings.Crown && m.$$V.enabled && +new Date - CrownCooldown > 5050) {
 				let Stone = p.U$[u._vv];
