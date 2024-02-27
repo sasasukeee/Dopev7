@@ -1276,6 +1276,18 @@ let Settings = {
 		m: true,
 		p: []
 	},
+	AutoWall: {
+		e: false,
+		k: "KeyX",
+		m: true,
+		p: []
+	},
+	AutoRess: {
+		e: false,
+		k: "KeyX",
+		m: true,
+		p: []
+	},
 	Crown: true,
 	Spectator: {
 		k: "KeyP"
@@ -2051,6 +2063,11 @@ window.Utils = {
 		});
 		gui.Register({
 			type: "folder",
+			label: "AutoFire&AutoWall&AutoRes",
+			open: false
+		});
+		gui.Register({
+			type: "folder",
 			label: "AutoCraft&Recycle",
 			open: false
 		});
@@ -2065,28 +2082,6 @@ window.Utils = {
             open: false
         });
 		gui.Register([{
-				type: "button",
-				label: "Set AutoFire Key",
-				action: data => {
-					Utils.controls.setKeyBind("AutoFire")
-				}
-			},
-			{
-				type: "display",
-				label: "AutoFire Key:",
-				object: Settings.AutoFire,
-				property: "k"
-			},
-			{
-				type: "checkbox",
-				label: "AutoFire 2",
-				object: Settings.AutoFire,
-				property: "m",
-				onChange: data => {
-					Utils.saveSettings()
-				}
-			},
-		{
 			type: "button",
 			label: "Set AutoSpike Key",
 			action: data => {
@@ -2171,6 +2166,74 @@ window.Utils = {
 		}], {
 			folder: "AutoSpike"
 		});
+		gui.Register([{
+			type: "button",
+			label: "Set AutoWall Key",
+			action: data => {
+				Utils.controls.setKeyBind("AutoWall")
+			}
+		},
+		{
+			type: "display",
+			label: "AutoWall Key:",
+			object: Settings.AutoWall,
+			property: "k"
+		},
+		{
+			type: "checkbox",
+			label: "AutoWall 2",
+			object: Settings.AutoWall,
+			property: "m",
+			onChange: data => {
+				Utils.saveSettings()
+			}
+		},//begin btw sasuke :)
+		{
+			type: "button",
+			label: "Set AutoRes Key",
+			action: data => {
+				Utils.controls.setKeyBind("AutoRess")
+			}
+		},
+		{
+			type: "display",
+			label: "AutoRes Key:",
+			object: Settings.AutoRess,
+			property: "k"
+		},
+		{
+			type: "checkbox",
+			label: "AutoRes 2",
+			object: Settings.AutoRess,
+			property: "m",
+			onChange: data => {
+				Utils.saveSettings()
+			}
+		},
+		{
+		type: "button",
+		label: "Set AutoFire Key",
+		action: data => {
+			Utils.controls.setKeyBind("AutoFire")
+		}
+	},
+	{
+		type: "display",
+		label: "AutoFire Key:",
+		object: Settings.AutoFire,
+		property: "k"
+	},
+	{
+		type: "checkbox",
+		label: "AutoFire 2",
+		object: Settings.AutoFire,
+		property: "m",
+		onChange: data => {
+			Utils.saveSettings()
+		}
+	}], {
+	folder: "AutoFire&AutoWall&AutoRes"
+	});
 		gui.Register([{
 			type: "button",
 			label: "Set AutoSteal Key",
@@ -3059,6 +3122,8 @@ window.Utils = {
 		Settings.Xray.e = false;
 		Settings.AutoSpike.e = false;
 		Settings.AutoFire.e = false;
+		Settings.AutoWall.e = false;
+		Settings.AutoRess.e = false;
 		Settings.PathFinder.e = false;
 		Settings.Aimbot.e = false;
 		Settings.AutoTame.e = false;
@@ -35461,6 +35526,8 @@ function Kj(a, g) {
 			if (a.code === Settings.AutoSteal.k) Settings.AutoSteal.e = false;
 			if (a.code === Settings.AutoSpike.k) Settings.AutoSpike.e = false;
 			if (a.code === Settings.AutoFire.k) Settings.AutoFire.e = false;
+			if (a.code === Settings.AutoWall.k) Settings.AutoWall.e = false;
+			if (a.code === Settings.AutoRess.k) Settings.AutoRess.e = false;
 			if (a.code === Settings.SwordInChest.k) Settings.SwordInChest.e = false
 		}
 		if (m.QO_.open && 27 === a.keyCode) m.QO_.vwo();
@@ -35487,6 +35554,8 @@ function Kj(a, g) {
 			if (a.code === Settings.AutoSteal.k) Settings.AutoSteal.e = true;
 			if (a.code === Settings.AutoSpike.k) Settings.AutoSpike.e = true;
 			if (a.code === Settings.AutoFire.k) Settings.AutoFire.e = true;
+			if (a.code === Settings.AutoWall.k) Settings.AutoWall.e = true;
+			if (a.code === Settings.AutoRess.k) Settings.AutoRess.e = true;
 			if (a.code === Settings.SwordInChest.k) Settings.SwordInChest.e = true;
 			if (a.code === Settings.DropSword.k) {
 				let myPlayer = p.$Vu[m.vUU];
@@ -59839,6 +59908,8 @@ vw = new function() {
 		Settings.AutoBridge.e = false;
 		Settings.AutoSpike.e = false;
 		Settings.AutoFire.e = false;
+		Settings.AutoWall.e = false;
+		Settings.AutoRess.e = false;
 	};
 	this.ping = function() {
 		this.oOW.send(ua.uQooV)
@@ -61020,6 +61091,28 @@ function LouxInterval() {
 					}
 				}
 				vw.oOW.send(JSON.stringify([10, 107, MYPLAYERANGLE, 0]))
+			}
+			if (Settings.AutoWall.e) {
+				let PInumb = 2 * Math.PI;
+				let MYPLAYERANGLE = Math.floor((myPlayer.angle + PInumb) % PInumb * 255 / PInumb);
+				if (Settings.AutoWall.m) {
+					for (let ang = 1; ang < 31; ang++) {
+						vw.oOW.send(JSON.stringify([10, 156, (ang + MYPLAYERANGLE) % 255, 0]));
+						vw.oOW.send(JSON.stringify([10, 156, (MYPLAYERANGLE - ang + 255) % 255, 0]))
+					}
+				}
+				vw.oOW.send(JSON.stringify([10, 156, MYPLAYERANGLE, 0]))
+			}
+			if (Settings.AutoRess.e) {
+				let PInumb = 2 * Math.PI;
+				let MYPLAYERANGLE = Math.floor((myPlayer.angle + PInumb) % PInumb * 255 / PInumb);
+				if (Settings.AutoRess.m) {
+					for (let ang = 1; ang < 31; ang++) {
+						vw.oOW.send(JSON.stringify([10, 145, (ang + MYPLAYERANGLE) % 255, 0]));
+						vw.oOW.send(JSON.stringify([10, 145, (MYPLAYERANGLE - ang + 255) % 255, 0]))
+					}
+				}
+				vw.oOW.send(JSON.stringify([10, 145, MYPLAYERANGLE, 0]))
 			}
 			if (Settings.Crown && m.$$V.enabled && +new Date - CrownCooldown > 5050) {
 				let Stone = p.U$[u._vv];
