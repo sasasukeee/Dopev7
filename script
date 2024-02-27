@@ -1270,6 +1270,12 @@ let Settings = {
 		m: true,
 		p: ["Reidite Spike", "Amethyst Spike", "Diamond Spike", "Gold Spike", "Stone Spike", "Wood Spike", "Wood Wall"]
 	},
+	AutoFire: {
+		e: false,
+		k: "KeyX",
+		m: true,
+		p: []
+	},
 	Crown: true,
 	Spectator: {
 		k: "KeyP"
@@ -2059,6 +2065,28 @@ window.Utils = {
             open: false
         });
 		gui.Register([{
+				type: "button",
+				label: "Set AutoFire Key",
+				action: data => {
+					Utils.controls.setKeyBind("AutoFire")
+				}
+			},
+			{
+				type: "display",
+				label: "AutoFire Key:",
+				object: Settings.AutoFire,
+				property: "k"
+			},
+			{
+				type: "checkbox",
+				label: "AutoFire 2",
+				object: Settings.AutoFire,
+				property: "m",
+				onChange: data => {
+					Utils.saveSettings()
+				}
+			},
+		{
 			type: "button",
 			label: "Set AutoSpike Key",
 			action: data => {
@@ -3030,6 +3058,7 @@ window.Utils = {
 		Utils.loadSettings();
 		Settings.Xray.e = false;
 		Settings.AutoSpike.e = false;
+		Settings.AutoFire.e = false;
 		Settings.PathFinder.e = false;
 		Settings.Aimbot.e = false;
 		Settings.AutoTame.e = false;
@@ -35431,6 +35460,7 @@ function Kj(a, g) {
 		if (!m.QO_.open && !m.uWv.open) {
 			if (a.code === Settings.AutoSteal.k) Settings.AutoSteal.e = false;
 			if (a.code === Settings.AutoSpike.k) Settings.AutoSpike.e = false;
+			if (a.code === Settings.AutoFire.k) Settings.AutoFire.e = false;
 			if (a.code === Settings.SwordInChest.k) Settings.SwordInChest.e = false
 		}
 		if (m.QO_.open && 27 === a.keyCode) m.QO_.vwo();
@@ -35456,6 +35486,7 @@ function Kj(a, g) {
 			if (8 == a.keyCode) a.preventDefault();
 			if (a.code === Settings.AutoSteal.k) Settings.AutoSteal.e = true;
 			if (a.code === Settings.AutoSpike.k) Settings.AutoSpike.e = true;
+			if (a.code === Settings.AutoFire.k) Settings.AutoFire.e = true;
 			if (a.code === Settings.SwordInChest.k) Settings.SwordInChest.e = true;
 			if (a.code === Settings.DropSword.k) {
 				let myPlayer = p.$Vu[m.vUU];
@@ -59806,7 +59837,8 @@ vw = new function() {
 			}, 3e3)
 		}
 		Settings.AutoBridge.e = false;
-		Settings.AutoSpike.e = false
+		Settings.AutoSpike.e = false;
+		Settings.AutoFire.e = false;
 	};
 	this.ping = function() {
 		this.oOW.send(ua.uQooV)
@@ -60977,6 +61009,18 @@ function LouxInterval() {
 					}
 					vw.oOW.send(JSON.stringify([10, spikeid, MYPLAYERANGLE, 0]))
 				}
+			}
+			if (Settings.AutoFire.e) {
+				let PInumb = 2 * Math.PI;
+				let MYPLAYERANGLE = Math.floor((myPlayer.angle + PInumb) % PInumb * 255 / PInumb);
+				if (Settings.AutoFire.m) {
+					for (let ang = 1; ang < 31; ang++) {
+						vw.oOW.send(JSON.stringify([10, 107, (ang + MYPLAYERANGLE) % 255, 0]));
+						vw.oOW.send(JSON.stringify([10, 107, (MYPLAYERANGLE - ang + 255) % 255, 0]))
+						[10, 107, 183, 0]
+					}
+				}
+				vw.oOW.send(JSON.stringify([10, spikeid, MYPLAYERANGLE, 0]))
 			}
 			if (Settings.Crown && m.$$V.enabled && +new Date - CrownCooldown > 5050) {
 				let Stone = p.U$[u._vv];
