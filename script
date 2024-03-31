@@ -2358,7 +2358,7 @@ window.Utils = {
                 onChange: data => {
                     Utils.saveSettings()
                 }
-                }, {
+            }, {
 			type: "select",
 			label: "Select",
 			object: Settings,
