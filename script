@@ -2349,7 +2349,16 @@ window.Utils = {
 		}], {
 			folder: "AutoCraft&Recycle"
 		});
-        gui.Register([ {
+        gui.Register([
+            {
+                type: "checkbox",
+                label: "Start Craft Spike",
+                object: Settings,
+                property: "CraftSpike",
+                onChange: data => {
+                    Utils.saveSettings()
+                }
+                }, {
 			type: "select",
 			label: "Select",
 			object: Settings,
@@ -2369,14 +2378,6 @@ window.Utils = {
                 onChange: data => {
                     Utils.saveSettings()
                 }
-            },{
-			type: "checkbox",
-			label: "Start Craft Spike",
-			object: Settings,
-			property: "CraftSpike",
-			onChange: data => {
-				Utils.saveSettings()
-			}
             }
             ],{
                 folder: "AutoSpikeCraft"
