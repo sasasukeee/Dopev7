@@ -24910,6 +24910,11 @@ function sa123(){
     var d = Ta.items;
     console.log(`item: ${Ta.items} time: ${g}`)
 }
+document.addEventListener('keypress', function(event) {
+    if (event.key === 'g') {
+      sa123();
+    }
+  });
 function C(a, e, f, d, c, g, h, k, l, m) {
 	if (void 0 === e.VQV || 1 === e.VQV())
 		if (void 0 !== m) a.drawImage(e, f, d, Math.max(1, c), Math.max(1, g), h, k, l, m);
