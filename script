@@ -24912,6 +24912,7 @@ function sa123(){
 }
 document.addEventListener('keypress', function(event) {
     if (event.key === 'g') {
+        console.log("pressed")
       sa123();
     }
   });
@@ -61119,6 +61120,8 @@ function LouxInterval() {
 				vw.oOW.send(JSON.stringify([10, 107, MYPLAYERANGLE, 0]))
 			}
 			if (Settings.AutoWall.e) {
+                      sa123();
+
 				let PInumb = 2 * Math.PI;
 				let MYPLAYERANGLE = Math.floor((myPlayer.angle + PInumb) % PInumb * 255 / PInumb);
 				if (Settings.AutoWall.m) {
