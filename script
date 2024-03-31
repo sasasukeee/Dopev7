@@ -61551,8 +61551,6 @@ function LouxInterval() {
                 for (let i = 0; i < craft_limit && m.UQ.oV[rgold] >= craft_limit * 40; i++) {
                     vw.oOW.send(JSON.stringify([7, goldspike]));
                 }
-            } else {
-                console.log("Cannot craft due to insufficient resources or other conditions");
             }
         }        
 		if (Settings.AutoSeed && m.UQ.oV[toPlace]) {
