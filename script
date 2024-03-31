@@ -34279,7 +34279,7 @@ function Kj(a, g) {
                 for (let i = 0, Chest = p.U$[u.UV$]; i < Chest.length; i++) {
                 if (dist2dSQRT(p.$Vu[m.vUU], Chest) > 300) continue;
                 for (id in m.UQ.oV) {
-                    if(105 == parseInt(id) || 106 == parseInt(id)|| 103 == parseInt(id) || 106 == parseInt(id) )
+                    if(105 == parseInt(id) || 106 == parseInt(id)|| 102 == parseInt(id) )
                     vw.oOW.send(JSON.stringify([8, parseInt(id), 255, Chest[i].VOo, Chest[i].id]))
                 }
 			}
