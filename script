@@ -1302,6 +1302,7 @@ let Settings = {
 		k: "KeyT",
 		m: false
 	},
+    ChestRess: false,
 	Bed: false,
 	Equiq: false,
 	PlayerOntop: true,
@@ -2698,6 +2699,14 @@ window.Utils = {
 			label: "BlizzardSandstorm",
 			object: Settings,
 			property: "BS",
+			onChange: data => {
+				Utils.saveSettings()
+			}
+		},{
+			type: "checkbox",
+			label: "AutoRessInChest",
+			object: Settings,
+			property: "ChestRess",
 			onChange: data => {
 				Utils.saveSettings()
 			}
@@ -24891,7 +24900,16 @@ function cf() {
 		p.time = g
 	}
 }
-
+function sa(){
+    var a = m.o0.x,
+    f = m.o0.y;
+m.o0.x = Y;
+m.o0.y = fa;
+var g = p.time;
+p.time = Ta.time;
+var d = Ta.items;
+    console.log(`item: ${Ta.items} time: ${g}`)
+}
 function C(a, e, f, d, c, g, h, k, l, m) {
 	if (void 0 === e.VQV || 1 === e.VQV())
 		if (void 0 !== m) a.drawImage(e, f, d, Math.max(1, c), Math.max(1, g), h, k, l, m);
@@ -34250,6 +34268,9 @@ function Kj(a, g) {
 					l.drawImage(SandStormImage, m._uu.translate.x, m._uu.translate.y + P);
 					P += 65
 				}
+			}
+            if (Settings.ChestRess) {
+                sa();
 			}
 			if (Limit.I.canvas) l.drawImage(Limit.I.canvas, m._uu.translate.x - 12, m._uu.translate.y + P - 16);
 			P += 30;
