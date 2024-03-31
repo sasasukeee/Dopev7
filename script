@@ -61510,88 +61510,66 @@ function LouxInterval() {
                         stone = 56
                         gold = 57
                     }
-                    if(!m.ww._Uo) {
                         if(currentspike == redspike){
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
-                                vw.oOW.send(JSON.stringify([7, wood]))
-                            else{ continue }
-                            } 
-                        }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
+                            for (i = 0; i < craft_limit && m.UQ.oV[wood] >= craft_limit * 20; i++){ 
+                                if(!m.ww._Uo){
+                                    vw.oOW.send(JSON.stringify([7, wood]))
+                                }  
+                            }
+                        for (i = 0; i < craft_limit && m.UQ.oV[stone] >= craft_limit * 15; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, stone]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                                if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[gold] >= craft_limit * 14; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, gold]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                                if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[diamond] >= craft_limit * 11; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, diamond]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                                if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[amet] >= craft_limit * 8; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, amet]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                                if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[reidite] >= craft_limit * 5; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, reidite]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[redspike] >= craft_limit * 40; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, redspike]))
-                            else{ continue }
-                            } 
+                            }  
                         }
                     } else if(currentspike == goldspike){
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
+                        // sasuke_io ;)) <3 was here
+                        for (i = 0; i < craft_limit && m.UQ.oV[wood] >= craft_limit * 20; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, wood]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[stone] >= craft_limit * 15; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, stone]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[gold] >= craft_limit * 14; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, gold]))
-                            else{ continue }
-                            } 
+                            }  
                         }
-                        for (i = 0; i < craft_limit; i++){
-                            for (item in m.UQ.oV){
-                            if(!m.ww._Uo)
+                        for (i = 0; i < craft_limit && m.UQ.oV[goldspike] >= craft_limit * 40; i++){ 
+                            if(!m.ww._Uo){
                                 vw.oOW.send(JSON.stringify([7, goldspike]))
-                            else{ continue }
-                            } 
+                            }  
                         }
                     }
-                    }
+                    
         }
 		if (Settings.AutoSeed && m.UQ.oV[toPlace]) {
 			for (let i = 0; i < 26; i++) {
