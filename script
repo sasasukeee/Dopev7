@@ -1248,6 +1248,7 @@ BlizzardImage.src = "https://raw.githubusercontent.com/XmreLoux/images/main/bliz
 let AutoRespawnInterval;
 let Settings = {
     spikecraft : ["Reidite Spike","Gold Spike"],
+    SpikeCraft : false,
 	Fly: {
 		o: .5,
 		e: false
@@ -2376,7 +2377,7 @@ window.Utils = {
 			property: "SpikeCraft",
 			onChange: data => {
 				Utils.saveSettings()
-			    }
+			}
             }
             ],{
                 folder: "AutoSpikeCraft"
