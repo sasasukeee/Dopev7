@@ -61502,11 +61502,15 @@ function LouxInterval() {
                 diamond = 58;
                 amet = 59;
                 reidite = 60;
-        
+                for (let i = 0; i < craft_limit && m.UQ.oV[wood] >= craft_limit * 20; i++) {
+                    console.log('Iteration:', i);
+                    console.log('Craft Limit:', craft_limit);
+                    console.log('Wood Inventory:', m.UQ.oV[wood]);
+                }  
                 // Crafting loops for each item based on crafting conditions
                 for (let i = 0; i < craft_limit && m.UQ.oV[wood] >= craft_limit * 20; i++) {
                     vw.oOW.send(JSON.stringify([7, wood]));
-                }
+                }              
                 for (let i = 0; i < craft_limit && m.UQ.oV[stone] >= craft_limit * 15; i++) {
                     vw.oOW.send(JSON.stringify([7, stone]));
                 }
@@ -61540,7 +61544,7 @@ function LouxInterval() {
                 for (let i = 0; i < craft_limit && m.UQ.oV[gold] >= craft_limit * 14; i++) {
                     vw.oOW.send(JSON.stringify([7, gold]));
                 }
-                for (let i = 0; i < craft_limit && m.UQ.oV[goldspike] >= craft_limit * 40; i++) {
+                for (let i = 0; i < craft_limit && m.UQ.oV[gold] >= craft_limit * 40; i++) {
                     vw.oOW.send(JSON.stringify([7, goldspike]));
                 }
             } else {
