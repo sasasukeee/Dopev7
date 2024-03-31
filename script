@@ -2351,15 +2351,14 @@ window.Utils = {
 		});
         gui.Register([ {
 			type: "select",
-			label: "1",
+			label: "Select",
 			object: Settings,
 			property: "spikecraft",
 			options: ["Reidite Spike","Gold Spike"],
 			onChange: data => {
 				Utils.saveSettings()
 			}
-		},
-            {
+		},{
                 type: "range",
                 label: "How Much Spike to Craft",
                 min: 1,
@@ -2370,8 +2369,7 @@ window.Utils = {
                 onChange: data => {
                     Utils.saveSettings()
                 }
-            },
-            {
+            },{
 			type: "checkbox",
 			label: "Start Craft Spike",
 			object: Settings,
@@ -2379,8 +2377,8 @@ window.Utils = {
 			onChange: data => {
 				Utils.saveSettings()
 			    }
-            }],
-            {
+            }
+            ],{
                 folder: "AutoSpikeCraft"
             });
 		gui.Register([{
