@@ -2357,7 +2357,6 @@ window.Utils = {
                 property: "CraftSpike",
                 onChange: data => {
                     Utils.saveSettings()
-                    console.log("hi")
                 }
             }, {
 			type: "select",
@@ -26468,6 +26467,7 @@ function hj() {
 		}
 	}
     if (Settings.CraftSpike) {
+        console.log("hi")
         
     }
 	if (Settings.Hitbox) {
