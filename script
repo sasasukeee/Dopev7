@@ -35946,7 +35946,7 @@ function dh(a) {
 			l.font = "18px Baloo Paaji";
 			l.strokeStyle = "black";
 			l.lineWidth = 7;
-			l.fillStyle = "lightgreen";
+			l.fillStyle = "#90EE90";
 			l.strokeText("Spectator", 0, YEnabled);
 			l.fillText("Spectator", 0, YEnabled)
 		}
