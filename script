@@ -2365,8 +2365,8 @@ window.Utils = {
 			property: "spikecraft",
 			options: ["Reidite Spike","Gold Spike"],
 			onChange: data => {
+                console.log(Settings.spikecraft, Settings.SpikesToCraft);
 				Utils.saveSettings()
-                console.log(Settings.CraftSpike, Settings.SpikesToCraft)
 			}
 		},{
                 type: "range",
