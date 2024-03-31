@@ -35936,7 +35936,7 @@ function dh(a) {
 				l.font = "18px Baloo Paaji";
 				l.strokeStyle = "black";
 				l.lineWidth = 7;
-				l.fillStyle = "red";
+				l.fillStyle = "white";
 				l.strokeText(hack, 0, YEnabled);
 				l.fillText(hack, 0, YEnabled);
 				YEnabled += 20
