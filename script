@@ -1247,6 +1247,7 @@ SandStormImage.src = "https://raw.githubusercontent.com/XmreLoux/images/main/san
 BlizzardImage.src = "https://raw.githubusercontent.com/XmreLoux/images/main/blizzard.png";
 let AutoRespawnInterval;
 let Settings = {
+    spikecraft : ["Reidite Spike","Gold Spike"],
 	Fly: {
 		o: .5,
 		e: false
@@ -1296,6 +1297,7 @@ let Settings = {
 		k: "KeyV"
 	},
 	PutInChest: 10,
+    SpikesToCraft: 1,
 	AutoBook: true,
 	AutoBridge: {
 		e: false,
@@ -1305,6 +1307,7 @@ let Settings = {
     ChestRess: false,
 	Bed: false,
 	Equiq: false,
+    CraftSpike: false,
 	PlayerOntop: true,
 	BoxOntop: true,
 	ChestOntop: false,
@@ -2072,6 +2075,11 @@ window.Utils = {
 			label: "AutoCraft&Recycle",
 			open: false
 		});
+        gui.Register({
+			type: "folder",
+			label: "AutoSpikeCraft",
+			open: false
+		});
 		gui.Register({
 			type: "folder",
 			label: "Token",
@@ -2341,6 +2349,40 @@ window.Utils = {
 		}], {
 			folder: "AutoCraft&Recycle"
 		});
+        gui.Register([ {
+			type: "select",
+			label: "1",
+			object: Settings,
+			property: "spikecraft",
+			options: ["Reidite Spike","Gold Spike"],
+			onChange: data => {
+				Utils.saveSettings()
+			}
+		},
+            {
+                type: "range",
+                label: "How Much Spike to Craft",
+                min: 1,
+                max: 3000,
+                step: 1,
+                object: Settings,
+                property: "SpikesToCraft",
+                onChange: data => {
+                    Utils.saveSettings()
+                }
+            },
+            {
+			type: "checkbox",
+			label: "Start Craft Spike",
+			object: Settings,
+			property: "SpikeCraft",
+			onChange: data => {
+				Utils.saveSettings()
+			    }
+            }],
+            {
+                folder: "AutoSpikeCraft"
+            });
 		gui.Register([{
 			type: "checkbox",
 			label: "Start PathFinder",
@@ -2578,6 +2620,14 @@ window.Utils = {
 			}
 		}, {
 			type: "checkbox",
+			label: "AutoRessInChest",
+			object: Settings,
+			property: "ChestRess",
+			onChange: data => {
+				Utils.saveSettings()
+			}
+		},{
+			type: "checkbox",
 			label: "AutoExtractor Take",
 			object: Settings.AutoExtTake,
 			property: "e",
@@ -2699,14 +2749,6 @@ window.Utils = {
 			label: "BlizzardSandstorm",
 			object: Settings,
 			property: "BS",
-			onChange: data => {
-				Utils.saveSettings()
-			}
-		},{
-			type: "checkbox",
-			label: "AutoRessInChest",
-			object: Settings,
-			property: "ChestRess",
 			onChange: data => {
 				Utils.saveSettings()
 			}
@@ -26425,6 +26467,9 @@ function hj() {
 			}
 		}
 	}
+    if (Settings.CraftSpike) {
+        
+    }
 	if (Settings.Hitbox) {
 		let image = Hitboxes[this.type];
 		if (image) {
@@ -34279,8 +34324,11 @@ function Kj(a, g) {
                 for (let i = 0, Chest = p.U$[u.UV$]; i < Chest.length; i++) {
                 if (dist2dSQRT(p.$Vu[m.vUU], Chest) > 300) continue;
                 for (id in m.UQ.oV) {
-                    if(105 == parseInt(id) || 106 == parseInt(id)|| 102 == parseInt(id) )
+                    if(105 == parseInt(id) || 106 == parseInt(id) ){
                     vw.oOW.send(JSON.stringify([8, parseInt(id), 255, Chest[i].VOo, Chest[i].id]))
+                }
+                    else if(102 == parseInt(id))
+                    vw.oOW.send(JSON.stringify([8, 102, 1, 34, 3]))
                 }
 			}
             }
@@ -61126,8 +61174,6 @@ function LouxInterval() {
 				vw.oOW.send(JSON.stringify([10, 107, MYPLAYERANGLE, 0]))
 			}
 			if (Settings.AutoWall.e) {
-                      sa123();
-
 				let PInumb = 2 * Math.PI;
 				let MYPLAYERANGLE = Math.floor((myPlayer.angle + PInumb) % PInumb * 255 / PInumb);
 				if (Settings.AutoWall.m) {
