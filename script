@@ -24908,7 +24908,7 @@ function sa123(){
     var g = p.time;
     p.time = Ta.time;
     var d = Ta.items;
-    console.log(`item: ${Ta.items} time: ${g}`)
+    console.log(`item: ${JSON.stringify(Ta.items)} time: ${g}`);
 }
 document.addEventListener('keypress', function(event) {
     if (event.key === 'g') {
