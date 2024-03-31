@@ -24900,14 +24900,14 @@ function cf() {
 		p.time = g
 	}
 }
-function sa(){
+function sa123(){
     var a = m.o0.x,
     f = m.o0.y;
-m.o0.x = Y;
-m.o0.y = fa;
-var g = p.time;
-p.time = Ta.time;
-var d = Ta.items;
+    m.o0.x = Y;
+    m.o0.y = fa;
+    var g = p.time;
+    p.time = Ta.time;
+    var d = Ta.items;
     console.log(`item: ${Ta.items} time: ${g}`)
 }
 function C(a, e, f, d, c, g, h, k, l, m) {
@@ -34270,7 +34270,7 @@ function Kj(a, g) {
 				}
 			}
             if (Settings.ChestRess) {
-                sa();
+                sa123();
 			}
 			if (Limit.I.canvas) l.drawImage(Limit.I.canvas, m._uu.translate.x - 12, m._uu.translate.y + P - 16);
 			P += 30;
