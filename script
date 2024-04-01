@@ -24941,22 +24941,6 @@ function cf() {
 		p.time = g
 	}
 }
-function sa123(){
-    var a = m.o0.x,
-    f = m.o0.y;
-    m.o0.x = Y;
-    m.o0.y = fa;
-    var g = p.time;
-    p.time = Ta.time;
-    var d = Ta.items;
-    console.log(`item: ${JSON.stringify(Ta.items)} time: ${g}`);
-}
-document.addEventListener('keypress', function(event) {
-    if (event.key === 'g') {
-        console.log("pressed")
-      sa123();
-    }
-  });
 function C(a, e, f, d, c, g, h, k, l, m) {
 	if (void 0 === e.VQV || 1 === e.VQV())
 		if (void 0 !== m) a.drawImage(e, f, d, Math.max(1, c), Math.max(1, g), h, k, l, m);
