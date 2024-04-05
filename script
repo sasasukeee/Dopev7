@@ -61502,18 +61502,21 @@ function LouxInterval() {
                 // Crafting loops for each item based on crafting conditions
                 for (let i = 0; i < craft_limit && m.UQ.oV[rwood] >= craft_limit * 20; i++) {
 					log("Start");
+					if(!m.ww._Uo)
                     vw.oOW.send(JSON.stringify([7, wood]));
                 }              
                 for (let i = 0; i < craft_limit && m.UQ.oV[rstone] >= craft_limit * 15; i++) {
+					if(!m.ww._Uo)
                     vw.oOW.send(JSON.stringify([7, stone]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rgold] >= craft_limit * 14; i++) {
-                    vw.oOW.send(JSON.stringify([7, gold]));
+                    if(!m.ww._Uo)
+					vw.oOW.send(JSON.stringify([7, gold]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rdiamond] >= craft_limit * 11; i++) {
                     vw.oOW.send(JSON.stringify([7, diamond]));
                 }
-                for (let i = 0; i < craft_limit && m.UQ.oVr[ramet] >= craft_limit * 8; i++) {
+                for (let i = 0; i < craft_limit && m.UQ.oV[ramet] >= craft_limit * 8; i++) {
                     vw.oOW.send(JSON.stringify([7, amet]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rreidite] >= craft_limit * 5; i++) {
@@ -61529,17 +61532,22 @@ function LouxInterval() {
 				
                 // Crafting loops for each item based on crafting conditions
                 for (let i = 0; i < craft_limit && m.UQ.oV[rwood] >= craft_limit * 20; i++) {
+					if(!m.ww._Uo){
 					log("Start");
                     vw.oOW.send(JSON.stringify([7, wood]));
+					}
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rstone] >= craft_limit * 15; i++) {
-                    vw.oOW.send(JSON.stringify([7, stone]));
+                    if(!m.ww._Uo)
+					vw.oOW.send(JSON.stringify([7, stone]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rgold] >= craft_limit * 14; i++) {
-                    vw.oOW.send(JSON.stringify([7, gold]));
+                    if(!m.ww._Uo)
+					vw.oOW.send(JSON.stringify([7, gold]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rgold] >= craft_limit * 40; i++) {
-                    vw.oOW.send(JSON.stringify([7, goldspike]));
+                    if(!m.ww._Uo)
+					vw.oOW.send(JSON.stringify([7, goldspike]));
                 }
             }
         }        
