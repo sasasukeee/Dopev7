@@ -61511,7 +61511,7 @@ function LouxInterval() {
                 amet = 59;
                 reidite = 60;
                 // Crafting loops for each item based on crafting conditions
-                for (; i < craft_limit && m.UQ.oV[rwood] >= craft_limit * 20;) {
+                for (; m.UQ.oV[woodw] <= craft_limit && m.UQ.oV[rwood] >= craft_limit * 20;) {
 					log("Start",i);
 					if(!m.ww._Uo)
                     vw.oOW.send(JSON.stringify([7, wood]));
