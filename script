@@ -61468,6 +61468,9 @@ function LouxInterval() {
             let rwood = 103;
             let rstone = 102;
             let rgold = 105;
+			let rdiamond = 106;
+			let ramet = 115;
+			let rreidite = 196;
             let wood, stone, gold, diamond, amet, reidite, redspike = 213, goldspike = 163;
         
             let craft_limit = Settings.SpikesToCraft;
@@ -61508,7 +61511,7 @@ function LouxInterval() {
                 for (let i = 0; i < craft_limit && m.UQ.oV[rdiamond] >= craft_limit * 11; i++) {
                     vw.oOW.send(JSON.stringify([7, diamond]));
                 }
-                for (let i = 0; i < craft_limit && m.UQ.oVr[amet] >= craft_limit * 8; i++) {
+                for (let i = 0; i < craft_limit && m.UQ.oVr[ramet] >= craft_limit * 8; i++) {
                     vw.oOW.send(JSON.stringify([7, amet]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rreidite] >= craft_limit * 5; i++) {
@@ -61521,7 +61524,7 @@ function LouxInterval() {
                 wood = 55;
                 stone = 56;
                 gold = 57;
-        
+				
                 // Crafting loops for each item based on crafting conditions
                 for (let i = 0; i < craft_limit && m.UQ.oV[rwood] >= craft_limit * 20; i++) {
                     vw.oOW.send(JSON.stringify([7, wood]));
