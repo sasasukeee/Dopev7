@@ -61529,6 +61529,7 @@ function LouxInterval() {
 				
                 // Crafting loops for each item based on crafting conditions
                 for (let i = 0; i < craft_limit && m.UQ.oV[rwood] >= craft_limit * 20; i++) {
+					log("Start");
                     vw.oOW.send(JSON.stringify([7, wood]));
                 }
                 for (let i = 0; i < craft_limit && m.UQ.oV[rstone] >= craft_limit * 15; i++) {
