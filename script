@@ -61496,8 +61496,8 @@ function LouxInterval() {
                 wood = 55;
                 stone = 56;
                 gold = 57;
-				while(woodi <= craft_limit * 11 && !m.ww._Uo){
-					woodi = woodi - 11;
+				while(woodi <= craft_limit && !m.ww._Uo){
+					woodi = woodi - 10;
 					.4 > m.uUw.$w && m.UQ.oV[f.o$u] && vw._$0(f.o$u);
 					.34 > m.uUw.o$ && (m.UQ.oV[f.wUW] ? vw._$0(f.wUW) : m.UQ.oV[f.wU0] ? vw._$0(f.wU0) : m.UQ.oV[f.WVU] ? vw._$0(f.WVU) : m.UQ.oV[f.$vv] ? vw._$0(f.$vv) : m.UQ.oV[f.Woo] ? vw._$0(f.Woo) : m.UQ.oV[f.u$U] ? vw._$0(f.u$U) : m.UQ.oV[f.Wu$] ? vw._$0(f.Wu$) : m.UQ.oV[f.ooW] ? vw._$0(f.ooW) : m.UQ.oV[f.wuO] ? vw._$0(f.wuO) : m.UQ.oV[f.OVw] ? vw._$0(f.OVw) : m.UQ.oV[f.vuw] ? vw._$0(f.vuw) : m.UQ.oV[f.w$W] ? vw._$0(f.w$W) : m.UQ.oV[f.O_U] ? vw._$0(f.O_U) : m.UQ.oV[f._uO] ? vw._$0(f._uO) : m.UQ.oV[193] ? vw._$0(193) : m.UQ.oV[194] && vw._$0(194));
 					if(!m.ww._Uo){
