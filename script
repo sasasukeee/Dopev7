@@ -6,6 +6,7 @@ let ok = true;
 let ws;
 let failedTimeout = (performance.now() / 1000) - 60;
 let woodi = 0;
+const delayBetweenSends = 900;
 scrt();
 
 let socketReady = false;
@@ -61496,14 +61497,19 @@ function LouxInterval() {
                 wood = 55;
                 stone = 56;
                 gold = 57;
-				for(;woodi <= craft_limit && !m.ww._Uo;){
-					if(!m.ww._Uo){
-					vw.oOW.send(JSON.stringify([7, wood]))
-					console.log("sent",woodi);
-					woodi++;
-				}
-				}
-            }
+				function sendCraftMessage() {
+				if (woodi <= craft_limit && !m.ww._Uo) {
+					if (!m.ww._Uo) {
+						vw.oOW.send(JSON.stringify([7, woodi]));
+						console.log("sent", woodi);
+						woodi++;
+					}
+					setTimeout(sendCraftMessage, delayBetweenSends); // Recursive call with delay
+				}				
+			}
+			sendCraftMessage();
+		}
+
         }
 		
 
