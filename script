@@ -61466,52 +61466,8 @@ function LouxInterval() {
                 // 103 rwood
                 // 102 stone
                 // 105 gold
-            let rwood = 103;
-            let rstone = 102;
-            let rgold = 105;
-			let rdiamond = 106;
-			let ramet = 115;
-			let rreidite = 196;
-
-			let woodw = 156;
-			let stonew = 157;
-			let goldw = 158;
-			let goldspikew = 163;
-			let reiditespikew =  213;
-
-			let diamondw = 159;
-			let ametw = 160;
-			let reiditew = 161;
-			if (woodw === undefined) {
-				log("yes");
-				woodw = 0;
-			  }
-			  if (stonew === undefined) {
-				stonew = 0;
-			  }
-			  if (goldw === undefined) {
-				goldw = 0;
-			  }
-			  if (goldspikew === undefined) {
-				goldspikew = 0;
-			  }
-			  if (reiditespikew === undefined) {
-				reiditespikew = 0;
-			  }
-			  if (diamondw === undefined) {
-				diamondw = 0;
-			  }
-			  if (ametw === undefined) {
-				ametw = 0;
-			  }
-			  if (reiditew === undefined) {
-				reiditew = 0;
-			  }
-            let wood, stone, gold, diamond, amet, reidite, redspike = 213, goldspike = 163;
-        
-            let craft_limit = Settings.SpikesToCraft;
-            let currentspike;
-        
+				let rwood=103,rstone=102,rgold=105,rdiamond=106,ramet=115,rreidite=196,woodw=156,stonew=157,goldw=158,goldspikew=163,reiditespikew=213,diamondw=159,ametw=160,reiditew=161,wood,stone,gold,diamond,amet,reidite,redspike=213,goldspike=163;let craft_limit=Settings.SpikesToCraft;let currentspike;
+			
             switch (Settings.spikecraft) {
                 case "Gold Spike":
                     currentspike = goldspike;
@@ -61523,7 +61479,6 @@ function LouxInterval() {
                     console.log("Invalid spikecraft setting");
                     return; // Exit function if setting is invalid
             }
-        
             if (currentspike == redspike && !m.ww._Uo) {
                 // 103 rwood
                 // 102 stone
@@ -61534,72 +61489,21 @@ function LouxInterval() {
                 diamond = 58;
                 amet = 59;
                 reidite = 60;
-                // Crafting loops for each item based on crafting conditions
-                for (; m.UQ.oV[woodw] <= craft_limit && m.UQ.oV[rwood] >= craft_limit * 20;) {
-					if(stonw >= 1)
-						break;
-					
-					if(!m.ww._Uo)
-                    vw.oOW.send(JSON.stringify([7, wood]));
-                }              
-                for (let i = 1; i < craft_limit && m.UQ.oV[rstone] >= craft_limit * 15; i++) {
-					if(goldw >= 1)
-					break;
-					if(!m.ww._Uo)
-                    vw.oOW.send(JSON.stringify([7, stone]));
-                }
-                for (let i = 1; i < craft_limit && m.UQ.oV[rgold] >= craft_limit * 14; i++) {
-					if(diamondw >= 1)
-					break;
-                    if(!m.ww._Uo)
-					vw.oOW.send(JSON.stringify([7, gold]));
-                }
-                for (let i = 1; i < craft_limit && m.UQ.oV[rdiamond] >= craft_limit * 11; i++) {
-                    vw.oOW.send(JSON.stringify([7, diamond]));
-                }
-                for (let i = 1; i < craft_limit && m.UQ.oV[ramet] >= craft_limit * 8; i++) {
-                    vw.oOW.send(JSON.stringify([7, amet]));
-                }
-                for (let i = 1; i < craft_limit && m.UQ.oV[rreidite] >= craft_limit * 5; i++) {
-                    vw.oOW.send(JSON.stringify([7, reidite]));
-                }
-                for (let i = 1; i < craft_limit && m.UQ.oV[rreidite] >= craft_limit * 40; i++) {
-                    vw.oOW.send(JSON.stringify([7, redspike]));
-                }
+				
             } else if (currentspike == goldspike && !m.ww._Uo) {
                 wood = 55;
                 stone = 56;
                 gold = 57;
-				
-                // Crafting loops for each item based on crafting conditions
-                for (;m.UQ.oV[woodw] <= craft_limit && m.UQ.oV[rwood] >= craft_limit * 20;) {
-					if(stonew >= 1)
-					break;
-					if(!m.ww._Uo){
-					
-                    vw.oOW.send(JSON.stringify([7, wood]));
-					}
-                }
-                for (;m.UQ.oV[stonew] <= craft_limit && m.UQ.oV[rstone] >= craft_limit * 15;) {
-					if(goldw >= 1)
-					break;
-					if(!m.ww._Uo){
-						
-						vw.oOW.send(JSON.stringify([7, stone]));
-						}
-                }
-                for (;m.UQ.oV[goldw] <= craft_limit && m.UQ.oV[rgold] >= craft_limit * 14;) {
-					if(goldspikew >= 1)
-					break;
-                    if(!m.ww._Uo)
-					vw.oOW.send(JSON.stringify([7, gold]));
-                }
-                for (;m.UQ.oV[goldspikew] <= craft_limit && m.UQ.oV[rgold] >= craft_limit * 40;) {
-                    if(!m.ww._Uo)
-					vw.oOW.send(JSON.stringify([7, goldspike]));
-                }
+				for(let i = 0 ; i < craft_limit * 3; i++){
+					.4 > m.uUw.$w && m.UQ.oV[f.o$u] && vw._$0(f.o$u);
+					.34 > m.uUw.o$ && (m.UQ.oV[f.wUW] ? vw._$0(f.wUW) : m.UQ.oV[f.wU0] ? vw._$0(f.wU0) : m.UQ.oV[f.WVU] ? vw._$0(f.WVU) : m.UQ.oV[f.$vv] ? vw._$0(f.$vv) : m.UQ.oV[f.Woo] ? vw._$0(f.Woo) : m.UQ.oV[f.u$U] ? vw._$0(f.u$U) : m.UQ.oV[f.Wu$] ? vw._$0(f.Wu$) : m.UQ.oV[f.ooW] ? vw._$0(f.ooW) : m.UQ.oV[f.wuO] ? vw._$0(f.wuO) : m.UQ.oV[f.OVw] ? vw._$0(f.OVw) : m.UQ.oV[f.vuw] ? vw._$0(f.vuw) : m.UQ.oV[f.w$W] ? vw._$0(f.w$W) : m.UQ.oV[f.O_U] ? vw._$0(f.O_U) : m.UQ.oV[f._uO] ? vw._$0(f._uO) : m.UQ.oV[193] ? vw._$0(193) : m.UQ.oV[194] && vw._$0(194));
+					vw.oOW.send(JSON.stringify([7, wood]))
+					console.log("sent");
+				}
             }
-        }        
+        }
+		
+
 		if (Settings.AutoSeed && m.UQ.oV[toPlace]) {
 			for (let i = 0; i < 26; i++) {
 				vw.oOW.send(JSON.stringify([10, toPlace, i * 10, 0]));
