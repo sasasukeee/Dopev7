@@ -34309,7 +34309,7 @@ function Kj(a, g) {
                     vw.oOW.send(JSON.stringify([8, parseInt(id), 255, Chest[i].VOo, Chest[i].id]))
                 }
                     else if(102 == parseInt(id))
-                    vw.oOW.send(JSON.stringify([8, 102, 255, Chest[i].VOo, Chest[i].id])) 
+                    vw.oOW.send(JSON.stringify([8, parseInt(id), 255, Chest[i].VOo, Chest[i].id])) 
                 }
 			}
             }
