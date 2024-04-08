@@ -2411,6 +2411,7 @@ window.Utils = {
 					world.U$[0][0]['ouo'] = skins.indexOf(e)
 					world.U$[0][0]['wv']['ouo'] = skins.indexOf(e)
 					window.currentSkin = skins.indexOf(e)
+					Utils.saveSettings()
 				}		
 			},
 			{
@@ -2421,6 +2422,7 @@ window.Utils = {
 					world.U$[0][0]['oUw'] = accessories.indexOf(e)
 					world.U$[0][0]['wv']['oUw'] = accessories.indexOf(e)
 					window.currentAccessory = accessories.indexOf(e)
+					Utils.saveSettings()
 				}
 			},
 			{
@@ -2431,6 +2433,7 @@ window.Utils = {
 					world.U$[0][0]['WuW'] = books.indexOf(e)
 					world.U$[0][0]['wv']['WuW'] = books.indexOf(e)
 					window.currentBook = books.indexOf(e)
+					Utils.saveSettings()
 				}
 			},
 			{
@@ -2441,6 +2444,7 @@ window.Utils = {
 					world.U$[0][0]['Wvu'] = bags.indexOf(e)
 					world.U$[0][0]['wv']['Wvu'] = bags.indexOf(e)
 					window.currentBag = bags.indexOf(e)
+					Utils.saveSettings()
 				}
 			}
 			],{
